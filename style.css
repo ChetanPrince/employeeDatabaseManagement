@@ -3,10 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+/* body{
     display: flex;
     flex-direction: column;
-}
+} */
 
 .inputData{
     display: flex;
@@ -22,20 +22,18 @@ body{
     height: 20px;
 }
 hr{
-  
     border: 2px solid black;
 }
 .recordDetails{
     margin-top: 10px;
 }
-table{
-    margin: 1%;
-    border: 1px solid black;
-    width: 100%;
+.tableData{
+    display: flex;
+    flex-direction: row;
 }
-table td, table th, table tr{
+/* table td, table th, table tr{
     border: 0.5px solid black;
-}
+} */
 
 button{
     font-size: 0.8rem;
@@ -53,4 +51,5 @@ button:active{
 
     transform: translate(5px, 5px);
     box-shadow: none;
+    transition: 1s;
 }
