@@ -22,13 +22,19 @@ table td, table th, table tr{
 }
 
 button{
-    font-size: 14px;
+    font-size: 0.8rem;
     cursor: pointer;
-    width: 45px;
-    height: 35px;
+    width: 5rem;
+    height: 3rem;
     /* background-color: grey; */
     box-shadow: 2px 2px 10px black;
+    border-radius: 25%;
 }
 button:hover{
+    background-color: rgba(0, 0, 255, 0.325);
+}
+button:active{
+
     transform: translate(5px, 5px);
+    box-shadow: none;
 }
