@@ -5,17 +5,33 @@
 }
 body{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+}
 
+.inputData{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    margin-left: 10%;
+    margin-bottom: 10px;
+}
+.inputsActual{
+    border: 1px solid rgba(128, 128, 128, 0.363);
+    width: 35%;
+    height: 20px;
+}
+hr{
+  
+    border: 2px solid black;
 }
 .recordDetails{
     margin-top: 10px;
 }
 table{
-    margin: 10%;
+    margin: 1%;
     border: 1px solid black;
+    width: 100%;
 }
 table td, table th, table tr{
     border: 0.5px solid black;
