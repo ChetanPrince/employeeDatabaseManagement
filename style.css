@@ -34,7 +34,12 @@ hr{
     align-items: center;
     gap: 10px;
 }
-
+#one{
+    border: 1px solid black;
+}
+#one tr{
+    border: 1px solid black;
+}
 
 button{
     font-size: 0.8rem;

@@ -30,10 +30,13 @@ function getData(){
 
 function printData(formData){
     let table = document.getElementById("one").getElementsByTagName("tbody")[0];
+    table.innerHTML = "";
     let tr  = document.createElement("tr");
     console.log(table);
-    tr.innerHTML =`<td>${formData}[0]</td>`;
+    tr.innerHTML =`<td>${formData.name}</td>`;
     console.log(tr.innerHTML);
+    table.appendChild(tr);
+
     
 
 }
