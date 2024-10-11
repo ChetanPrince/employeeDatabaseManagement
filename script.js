@@ -37,6 +37,5 @@ function printData(formData){
     console.log(tr.innerHTML);
     table.appendChild(tr);
 
-    
-
+    let savedData = localStorage.getItem("employeeData? employeeData: setItem("employeeData")");
 }
