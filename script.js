@@ -3,6 +3,8 @@ searchBtn.addEventListener("click", saveData);
 
 let selectedRow = null;
 
+window.onload = saveData();
+
 function saveData(e){
     e.preventDefault();
     let formData = getData();
@@ -26,7 +28,7 @@ function getData(){
         email: document.getElementById("emailId").value
     }
 }
-// console.log(getData);
+
 
 function printData(formData){
     let table = document.getElementById("one").getElementsByTagName("tbody")[0];
