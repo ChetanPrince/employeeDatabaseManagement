@@ -3,7 +3,7 @@ searchBtn.addEventListener("click", saveData);
 
 let selectedRow = null;
 
-window.onload = saveData();
+window.onload = saveData;
 
 function saveData(e){
     e.preventDefault();
