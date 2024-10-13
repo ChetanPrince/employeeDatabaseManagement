@@ -3,11 +3,31 @@ searchBtn.addEventListener("click", saveData);
 
 let selectedRow = null;
 
-// window.onload = saveData;
-
 function saveData(){
+    if(selectedRow === null){
 
+        let inputs = document.querySelectorAll(".inputsActual");
+        let formData = getData();
+        let allFieldsFilled = true;
+        
+        inputs.forEach(input => {
+            if(input.value.trim() ===""){
+                allFieldsFilled = false;
+            }})
+            if(allFieldsFilled){
+                printData(formData);
+            }else{
+                alert("Please fill the required fields first!");
+                return;
+            }
+        }
+    else{
+        updateData(formData);
+    }
+    clearForm();
 }
+
+
 
 
 function getData(){
@@ -28,4 +48,11 @@ function printData(formData){
     table.appendChild(tr);
 
     let savedData = localStorage.getItem("employeeData") || (localStorage.setItem("employeeData", defaultData), defaultData);
+}
+
+function editRow(td){
+
+    selectedRow = td.parentElement.ParentElement;
+    console.log(selectedRow);
+
 }
