@@ -5,18 +5,32 @@ let selectedRow = null;
 
 // window.onload = saveData;
 
-function saveData(e){
-    e.preventDefault();
+function saveData(){
     let formData = getData();
-    if(selectedRow === null){
-        printData(formData);
+    if (selectedRow === null) {
+        let inputs = document.querySelectorAll(".inputsActual");
+        let allFilled = true;
 
+        inputs.forEach(input => {
+            if (input.value.trim() === "") {
+                allFilled = false; // If any field is empty, set allFilled to false
+            }
+        });
+
+        if (allFilled) {
+            printData(formData); // Only print if all fields are filled
+        } else {
+            alert("You need to fill the empty fields!");
+            return; // Stop further execution if any field is empty
+        }
+
+    } else {
+        updateData(formData); // If editing an existing row, update the data
     }
-    else{
-        updateData(formData);
-    }
-clearForm();
+
+    clearForm(); // Clear the form whether adding or updating data
 }
+
 
 function getData(){
     return{
