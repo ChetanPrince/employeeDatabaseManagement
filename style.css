@@ -25,19 +25,25 @@ hr{
 }
 .tableData{
     display: flex;
-    justify-content: center;
-    width: 80%;
     align-items: center;
-    gap: 10px;
+    padding: 10px;
 }
-.tableData tr{
-    border: 1px solid green;
-}
-#one{
+
+.data{
     border: 1px solid black;
+    /* width: 100%;
+    padding: 50px;
+    text-align: center; */
 }
-#one tr{
-    border: 1px solid black;
+#one, #two{
+    width: 50%;
+
+}
+
+
+#one td, #two td{
+   padding: 1rem; 
+ 
 }
 
 button{
