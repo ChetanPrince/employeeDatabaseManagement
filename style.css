@@ -30,6 +30,9 @@ hr{
     align-items: center;
     gap: 10px;
 }
+.tableData tr{
+    border: 1px solid green;
+}
 #one{
     border: 1px solid black;
 }

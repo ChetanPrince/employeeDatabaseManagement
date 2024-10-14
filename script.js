@@ -1,5 +1,7 @@
 let selectedRow = null;
-window.onload = saveData;
+// window.onload = saveData;
+const sbmtBtn = document.getElementById("submit");
+sbmtBtn.addEventListener("click", saveData);
 
 function saveData(){
     let formData = getData();
