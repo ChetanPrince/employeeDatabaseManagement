@@ -26,33 +26,40 @@ hr{
     border: 2px solid black;
 }
 .recordDetails{
-    margin-top: 10px;
-/* }
-.tableData{
-    display: flex;
-    /* align-items: center; */
-    /* padding: 50px; */
-    /* flex-direction: row; */
-    /* justify-content: center; */
+    margin-top: 10px;}
 
-} */
+table{
+    display: flex;
+    padding: 10px;
+    border: 1px solid black;
+    width: 100%;
+    border-collapse: collapse;
+
+} 
 #firstRow{
     width: 100%;
 }
 
-.data{
-    border: 1px solid black;
+#firstRow .data{
+    /* border: 1px solid black; */
     width: 50%;
+    vertical-align: top;
+    
 }
-/* #one, #two{
-    width: 50%;
 
-} */
+#one, #two {
+    width: 100%; /* Inner tables should take up the full width of their parent <td> */
+    border: 1px solid black; /* Optional border for visibility */
+}
+thead th {
+    background-color: #f2f2f2; /* Optional styling for table headers */
+    text-align: left;
+    padding: 10px;
+}
 
-
-#one td, #two td{
-   padding: 1rem; 
- 
+tbody {
+    text-align: left;
+    padding: 10px;
 }
 
 button{
