@@ -3,6 +3,9 @@ let selectedRow = null;
 const sbmtBtn = document.getElementById("submit");
 sbmtBtn.addEventListener("click", saveData);
 
+const cnclBtn = document.getElementById("cancelEdit");
+cnclBtn.addEventListener("click", cancelEdit);
+
 function saveData(){
     let formData = getData();
     if(selectedRow === null){
@@ -52,6 +55,13 @@ function editRow(td){
         document.getElementById("emailId").value =selectedRow.cells[3].innerHTML;
 
         document.getElementById("submit").innerText = "Update" ;
+        cnclBtn.style.display = "inline";
+}
+
+function cancelEdit(){
+    clearForm();
+    selectedRow = null;
+    cnclBtn.style.display = "none";
 }
 function deleteRow(td){
     selectedRow = td.parentElement.parentElement;
@@ -77,4 +87,5 @@ document.getElementById("nameFirst").value = "";
     document.getElementById("emailId").value ="";
 
     document.getElementById("submit").innerText = "Submit";
+    cnclBtn.style.display = "none";
 }
