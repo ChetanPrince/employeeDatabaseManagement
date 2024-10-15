@@ -27,30 +27,36 @@ hr{
 }
 .recordDetails{
     margin-top: 10px;}
-
-table{
-    display: flex;
-    padding: 10px;
-    border: 1px solid black;
+/* Ensure the table takes full width */
+.tableData {
     width: 100%;
     border-collapse: collapse;
+}
 
-} 
-#firstRow{
+/* Set the first row to full width */
+#firstRow {
     width: 100%;
+    display: flex; /* Using flexbox to control layout */
+    justify-content: space-between;
 }
 
-#firstRow .data{
-    /* border: 1px solid black; */
-    width: 50%;
-    vertical-align: top;
-    
+/* Set the width of the first <td> */
+#firstRow .data {
+    width: 50%; /* Make the first data cell 50% */
+    vertical-align: top; /* Align content to the top */
 }
 
+/* Style the second <td> */
+#firstRow td:not(.data) {
+    width: 50%; /* Adjust this to balance the 10% margin */
+}
+
+/* Styling for the inner tables */
 #one, #two {
     width: 100%; /* Inner tables should take up the full width of their parent <td> */
     border: 1px solid black; /* Optional border for visibility */
 }
+
 thead th {
     background-color: #f2f2f2; /* Optional styling for table headers */
     text-align: left;
@@ -61,6 +67,7 @@ tbody {
     text-align: left;
     padding: 10px;
 }
+
 
 button{
     font-size: 0.8rem;
