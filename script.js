@@ -53,12 +53,15 @@ function editRow(td){
         document.getElementById("secondNameFirst").value = selectedRow.cells[1].innerHTML;
         document.getElementById("contactNo").value=selectedRow.cells[2].innerHTML;
         document.getElementById("emailId").value =selectedRow.cells[3].innerHTML;
-
+    document.getElementById("submit").innerText = "update";
+    cnclBtn.style.display = "inline";
 }
 
 function cancelEdit(){
     clearForm();
     selectedRow = null;
+    cnclBtn.style.display = "none";
+    document.getElementById("submit").innerText = "Submit";
 }
 function deleteRow(td){
     selectedRow = td.parentElement.parentElement;
@@ -74,7 +77,8 @@ function updateData(formData){
     selectedRow.cells[2].innerHTML = formData.contact;
     selectedRow.cells[3].innerHTML = formData.email;
     selectedRow = null;
-
+    cnclBtn.style.display = "none";
+    document.getElementById("submit").innerText = "Submit";
 }
 function clearForm(){
 document.getElementById("nameFirst").value = "";
