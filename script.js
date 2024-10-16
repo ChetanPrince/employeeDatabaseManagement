@@ -61,7 +61,6 @@ function cancelEdit(){
     clearForm();
     selectedRow = null;
     cnclBtn.style.display = "none";
-    document.getElementById("submit").innerText = "Submit";
 }
 function deleteRow(td){
     selectedRow = td.parentElement.parentElement;
@@ -81,9 +80,11 @@ function updateData(formData){
     document.getElementById("submit").innerText = "Submit";
 }
 function clearForm(){
-document.getElementById("nameFirst").value = "";
+    document.getElementById("nameFirst").value = "";
     document.getElementById("secondNameFirst").value = "";
     document.getElementById("contactNo").value="";
     document.getElementById("emailId").value ="";
-
+    document.getElementById("submit").innerText = "Submit";
+    cnclBtn.style.display = "none";
+    
 }
