@@ -52,6 +52,11 @@ function printData(formData){
 
 function saveToLocalStorage(formData){
     let employeeData = JSON.parse(localStorage.getItem("employees")) || [];
+    employeeData.push(formData);
+    localStorage.setItem("employeese", JSN.stringify(employeeData));
+}
+function loadTableFromLocalStorage(){
+    let employeeData = JSON.parse(localStorage.getItem("employee"))||[];
     employeeData.forEach(data=>{
         printData(data);
     });
@@ -74,9 +79,11 @@ function cancelEdit(){
     cnclBtn.style.display = "none";
 }
 function deleteRow(td){
-    selectedRow = td.parentElement.parentElement;
     if(confirm("Are you sure you want to delete the row?")){
+        selectedRow = td.parentElement.parentElement;
         selectedRow.remove();
+        let name = selectedRow.cells[0].innerHTML;
+        deleteFromLocalStorage(name);
     }
     selectedRow = null;
 }
