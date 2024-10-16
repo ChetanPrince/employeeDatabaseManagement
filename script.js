@@ -1,5 +1,5 @@
 let selectedRow = null;
-// window.onload = saveData;
+
 const sbmtBtn = document.getElementById("submit");
 sbmtBtn.addEventListener("click", saveData);
 
@@ -21,6 +21,7 @@ function saveData(){
             }})
             if(allFieldsFilled){
                 printData(formData);
+                saveToLocalStorage(formData);
             }else{
                 alert("Please fill the required fields first!");
                 return;
@@ -53,10 +54,10 @@ function printData(formData){
 function saveToLocalStorage(formData){
     let employeeData = JSON.parse(localStorage.getItem("employees")) || [];
     employeeData.push(formData);
-    localStorage.setItem("employeese", JSN.stringify(employeeData));
+    localStorage.setItem("employees", JSON.stringify(employeeData));
 }
 function loadTableFromLocalStorage(){
-    let employeeData = JSON.parse(localStorage.getItem("employee"))||[];
+    let employeeData = JSON.parse(localStorage.getItem("employees"))||[];
     employeeData.forEach(data=>{
         printData(data);
     });
@@ -87,15 +88,34 @@ function deleteRow(td){
     }
     selectedRow = null;
 }
+
+function deleteFromLocalStorage(name){
+    let employeeData = JSON.parse(localStorage.getItem("employees"))|| -[];
+    employeeData = employeeData.filter(employee=> employee.name !== name);
+    localStorage.setItem("employees", JSON.stringify(employeeData));
+}
 function updateData(formData){
-    console.log(formData.name)
     selectedRow.cells[0].innerHTML = formData.name;
     selectedRow.cells[1].innerHTML = formData.surname;
     selectedRow.cells[2].innerHTML = formData.contact;
     selectedRow.cells[3].innerHTML = formData.email;
+
+    updateLocalStorage(formData);
+
     selectedRow = null;
     cnclBtn.style.display = "none";
     document.getElementById("submit").innerText = "Submit";
+}
+
+function updateLocalStorage(updatedData){
+    let employeeData = JSON.parse(localStorage.getItem("employees"))||[];
+    employeeData = employeeData.map(employee=>{
+        if(employee.name === selectedRow.cells[0].innerHTML){
+            return updatedData;
+        }
+        return employee;
+    });
+    localStorage.setItem("employees", JSON.stringify(employeeData));
 }
 function clearForm(){
     document.getElementById("nameFirst").value = "";
