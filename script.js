@@ -6,6 +6,10 @@ sbmtBtn.addEventListener("click", saveData);
 const cnclBtn = document.getElementById("cancelEdit");
 cnclBtn.addEventListener("click", cancelEdit);
 
+
+window.onload = function(){
+    loadTableFromLocalStorage();
+}
 function saveData(){
     let formData = getData();
     if(selectedRow === null){
@@ -44,6 +48,13 @@ function printData(formData){
     tr.innerHTML =`<td>${formData.name}</td><td>${formData.surname}</td><td>${formData.contact}</td><td>${formData.email}</td><td><button id="edit" onClick="editRow(this)">Edit</button><button id="delete" onclick="deleteRow(this)">Delete</button></td>`;
     table.appendChild(tr);
 
+}
+
+function saveToLocalStorage(formData){
+    let employeeData = JSON.parse(localStorage.getItem("employees")) || [];
+    employeeData.forEach(data=>{
+        printData(data);
+    });
 }
 
 function editRow(td){
