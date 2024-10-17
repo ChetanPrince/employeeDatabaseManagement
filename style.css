@@ -57,6 +57,10 @@ hr{
     border: 1px solid black; /* Optional border for visibility */
 }
 
+#one tbody td{
+    border: 1px solid black;
+}
+
 thead th {
     background-color: #f2f2f2; /* Optional styling for table headers */
     text-align: left;
