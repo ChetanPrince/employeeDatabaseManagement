@@ -9,6 +9,7 @@ cnclBtn.addEventListener("click", cancelEdit);
 
 window.onload = function(){
     loadTableFromLocalStorage();
+    loadTableTwoFromLocalStorage();
 }
 function saveData(){
     let formData = getData();
@@ -22,6 +23,7 @@ function saveData(){
             if(allFieldsFilled){
                 printData(formData);
                 saveToLocalStorage(formData);
+                printTableTwo();
             }else{
                 alert("Please fill the required fields first!");
                 return;
@@ -35,13 +37,13 @@ function saveData(){
 
 function getData(){
     return{
+        id: Date.now(),
         name: document.getElementById("nameFirst").value,
         surname: document.getElementById("secondNameFirst").value,
         contact: document.getElementById("contactNo").value,
         email: document.getElementById("emailId").value
     }
 }
-
 
 function printData(formData){
     let table = document.getElementById("one").getElementsByTagName("tbody")[0];
