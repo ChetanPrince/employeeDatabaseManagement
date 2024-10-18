@@ -90,7 +90,7 @@ function deleteRow(td){
 }
 
 function deleteFromLocalStorage(name){
-    let employeeData = JSON.parse(localStorage.getItem("employees"))|| -[];
+    let employeeData = JSON.parse(localStorage.getItem("employees"))|| [];
     employeeData = employeeData.filter(employee=> employee.name !== name);
     localStorage.setItem("employees", JSON.stringify(employeeData));
 }
