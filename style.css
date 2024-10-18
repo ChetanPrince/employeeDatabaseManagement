@@ -56,6 +56,13 @@ hr{
     width: 100%; /* Inner tables should take up the full width of their parent <td> */
     border: 1px solid black; /* Optional border for visibility */
 }
+#one td{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 10px;
+    padding: 10px;
+}
 
 #one tbody td{
     border: 1px solid black;
