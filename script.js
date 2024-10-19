@@ -65,6 +65,12 @@ function loadTableFromLocalStorage(){
     });
 }
 
+function printTableTwo(formData){
+    let tableTwo = document.getElementById("two").getElementsByTagName("tbody")[0];
+    let tr = document.createElement("tr");
+    tr.innerHTML = `<td><a href="#" onclick="showDetails(${formData.id})">${formData.id}</a></td><td>${formData.name}</td>`;
+}
+
 function editRow(td){
 
     selectedRow = td.parentElement.parentElement;
