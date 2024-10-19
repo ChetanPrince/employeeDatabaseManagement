@@ -70,6 +70,27 @@ function printTableTwo(formData){
     let tr = document.createElement("tr");
     tr.innerHTML = `<td><a href="#" onclick="showDetails(${formData.id})">${formData.id}</a></td><td>${formData.name}</td>`;
 }
+function loadTableTwoFromLocalStorage(){
+    let employeeData = JSON.parse(localStorage.getItem("employees")) || [];
+    employeeData.forEach(data => {
+        printTableTwo(data);
+    });
+}
+
+function showDetails(id){
+    let employeeData = JSON.parse(localStorage.getItem("employees")) || [];
+    let selectedEmployee = employeeData.find(emp => emp.id === id);
+    if(selectedEmployee){
+        clearTableOne();
+        printData(selectedEmployee);
+    }
+}
+
+function clearTableOne(){
+    let table = document.getElementById("one").getElementsByTagName("tbody")[0];
+    table.innerHTML = "";
+    
+}
 
 function editRow(td){
 
