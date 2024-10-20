@@ -23,7 +23,7 @@ function saveData(){
             if(allFieldsFilled){
                 printData(formData);
                 saveToLocalStorage(formData);
-                printTableTwo();
+                printTableTwo(formData);
             }else{
                 alert("Please fill the required fields first!");
                 return;
