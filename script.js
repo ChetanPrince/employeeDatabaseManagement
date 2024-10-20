@@ -53,6 +53,12 @@ function printData(formData){
 
 }
 
+function printTableTwo(formData){
+    let tableTwo = document.getElementById("two").getElementsByTagName("tbody")[0];
+    let tr = document.createElement("tr");
+    tr.innerHTML = `<td><a href="#" onclick="showDetails(${formData.id})">${formData.id}</a></td><td>${formData.name}</td>`;
+    tableTwo.appendChild(tr);
+}
 function saveToLocalStorage(formData){
     let employeeData = JSON.parse(localStorage.getItem("employees")) || [];
     employeeData.push(formData);
@@ -65,12 +71,6 @@ function loadTableFromLocalStorage(){
     });
 }
 
-function printTableTwo(formData){
-    let tableTwo = document.getElementById("two").getElementsByTagName("tbody")[0];
-    let tr = document.createElement("tr");
-    tr.innerHTML = `<td><a href="#" onclick="showDetails(${formData.id})">${formData.id}</a></td><td>${formData.name}</td>`;
-    tableTwo.appendChild(tr);
-}
 function loadTableTwoFromLocalStorage(){
     let employeeData = JSON.parse(localStorage.getItem("employees")) || [];
     employeeData.forEach(data => {
