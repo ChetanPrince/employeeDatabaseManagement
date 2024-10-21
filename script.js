@@ -90,7 +90,9 @@ function printIndividualDetail(employee){
     // Instead of appending a row, directly print the employee details in the table.
 
     let table = document.getElementById("one").getElementsByTagName("tbody")[0];
-    
+    let tr = document.createElement("tr");
+    tr.innerHTML = `<td>${employee.name}</td><td>${employee.surname}</td><td>${employee.contact}</td><td>${employee.email}</td><td><button id="edit" onClick="editRow(this)">Edit</button><button id="delete" onclick="deleteRow(this)">Delete</button></td>`;
+    table.appendChild(tr);
 }
 
 
