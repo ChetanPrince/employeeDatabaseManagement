@@ -86,6 +86,12 @@ function showDetails(id){
         printIndividualDetails(selectedEmployee);
     }
 }
+function printIndividualDetail(employee){
+    // Instead of appending a row, directly print the employee details in the table.
+
+    let table = document.getElementById("one").getElementsByTagName("tbody")[0];
+    
+}
 
 
 function clearTableOne(){
