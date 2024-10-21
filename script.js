@@ -83,9 +83,10 @@ function showDetails(id){
     let selectedEmployee = employeeData.find(emp => emp.id === id);
     if(selectedEmployee){
         clearTableOne();
-        printData(selectedEmployee);
+        printIndividualDetails(selectedEmployee);
     }
 }
+
 
 function clearTableOne(){
     let table = document.getElementById("one").getElementsByTagName("tbody")[0];
