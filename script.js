@@ -84,9 +84,13 @@ function showDetails(id){
     if(selectedEmployee){
         clearTableOne();
         printIndividualDetails(selectedEmployee);
+
+        setTimeout(function(){
+            clearTableOne();
+        }, 10000);
     }
 }
-function printIndividualDetail(employee){
+function printIndividualDetails(employee){
     // Instead of appending a row, directly print the employee details in the table.
 
     let table = document.getElementById("one").getElementsByTagName("tbody")[0];
