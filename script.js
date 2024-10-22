@@ -21,7 +21,7 @@ function saveData(){
                 allFieldsFilled = false;
             }})
             if(allFieldsFilled){
-                printData(formData);
+                // printData(formData);
                 saveToLocalStorage(formData);
                 printTableTwo(formData);
             }else{
