@@ -8,7 +8,7 @@ cnclBtn.addEventListener("click", cancelEdit);
 
 
 window.onload = function(){
-    loadTableFromLocalStorage();
+    // loadTableFromLocalStorage();
     loadTableTwoFromLocalStorage();
 }
 function saveData(){
