@@ -17,3 +17,27 @@ body{
     margin-left: 10%;
     margin-bottom: 10px;
 }
+.inputsActual{
+    border: 1px solid rgba(128,128, 128, 0.363);
+    width: 35%;
+    height: 20px;
+}
+hr{
+    border: 2px solid black;
+}
+.recordDetails{
+    margin-top: 10px;
+}
+.tableData{
+    width: 100%;
+    border-collapse: collapse;
+}
+#firstRow{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#firstRow .data{
+    width: 50%;
+    vertical-align: top;
+}
