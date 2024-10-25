@@ -66,3 +66,26 @@ thead th{
     text-align: left;
     padding: 10px;
 }
+tbody{
+    text-align: left;
+    padding: 10px;
+}
+button{
+    font-size: 0.8rem;
+    cursor: pointer;
+    width: 5rem;
+    height: 3 rem;
+    box-shadow: 2px 2px 10px black;
+    border-radius: 25%;
+}
+
+button:hover{
+    background-color: rgba(0, 0, 255, 0.325);
+
+}
+button:active{
+
+    transform: translate(5px, 5px);
+    box-shadow: none;
+    transition: 1s;
+}
