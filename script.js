@@ -1,3 +1,7 @@
+let selectedRow = null;
+const cnclBtn = document.getElementById("cancelEdit");
+cnclBtn.addEventListener("click", cancelEdit);
+
 const sbmtBtn = document.getElementById("submit");
 
 sbmtBtn.addEventListener("click", saveData);
