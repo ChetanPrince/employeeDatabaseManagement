@@ -1,9 +1,25 @@
-const btn = document.getElementById("submit");
+const sbmtBtn = document.getElementById("submit");
 
-btn.addEventListener("click", saveData);
+sbmtBtn.addEventListener("click", saveData);
 
 
 function saveData(){
+    let formData = getData();
+    if(selectedRow === null){
+        let inputs = document.querySelectorAll(".inputsActual");
+        let allFieldsFilled = true;
+        inputs.forEach(input => {
+            if(input.ariaValueMax.trim() ===""){
+                allFieldsFilled = false;
+            }})
+            if(allFieldsFilled){
+                saveToLocalStorage(formData);
+                printTableTwo(formData);
+                }else{
+                    alert("Please fill the required fields first!");
+                    return;
+                }    }
+            
 const output = document.getElementsByTagName("table");
 const tr = document.createElement("tr");
 tr.innerHTML = `<td>chakk k rakh</td>`;
