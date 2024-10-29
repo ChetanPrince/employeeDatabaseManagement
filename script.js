@@ -23,6 +23,11 @@ function saveData(){
                     alert("Please fill the required fields first!");
                     return;
                 }    }
+
+                else{
+                    updateData(formData);
+                }
+                clearForm();
             
 const output = document.getElementsByTagName("table");
 const tr = document.createElement("tr");
