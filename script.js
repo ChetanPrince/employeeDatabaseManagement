@@ -28,10 +28,4 @@ function saveData(){
                     updateData(formData);
                 }
                 clearForm();
-            
-const output = document.getElementsByTagName("table");
-const tr = document.createElement("tr");
-tr.innerHTML = `<td>chakk k rakh</td>`;
-output.appendChild(tr);
-
 }
