@@ -29,3 +29,18 @@ function saveData(){
                 }
                 clearForm();
 }
+
+
+function getData(){
+    return{
+        id: Date.now(),
+        name: document.getElementById("nameFirst").value,
+        surname: document.getElementById("secondNameFirst").value,
+        contact: document.getElementById("contactNo").value,
+        email: document.getElementById("emailId").value
+    }
+}
+
+function printData(formData){
+    
+}
