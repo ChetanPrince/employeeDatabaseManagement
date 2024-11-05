@@ -54,3 +54,9 @@ function printTableTwo(formData){
     tr.innerHTML = `<td><a href="#" onclick="showDetails(${formData.id})">${formData.id}</a></td><td>${formData.name}</td>`;
     printTableTwo.appendChild(tr);
 }
+
+function saveToLocalStorage(formData){
+    let employeeData = JSON.parse(localStorage.getItem("employee")) || [];
+    employeeData.push(formData);
+    localStorage.setItem("employee", JSON.stringify(employeeData));
+}
