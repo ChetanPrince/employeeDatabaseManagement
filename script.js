@@ -60,3 +60,9 @@ function saveToLocalStorage(formData){
     employeeData.push(formData);
     localStorage.setItem("employee", JSON.stringify(employeeData));
 }
+function loadTableFromLocalStorage(){
+    let employeeData = JSON.parse(localStorage.getItem("employee")) || [];
+    employeeData.forEach(data=>{ printTableTwo(data);
+        
+    });
+}
