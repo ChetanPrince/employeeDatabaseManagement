@@ -68,14 +68,19 @@ function loadTableFromLocalStorage(){
 }
 function loadTableTwoFromLocalStorage(){
     let employeeData = JSON.parse(localStorage,getItem("employees"))||[];
-    let selectedEmployee = employeeData.find(emp=> emp.id === id);
+    employeeData.forEach(data => {
+        printTableTwo(data);
+    });
+}
+function showDetails(id){
+    let employeeData = JSON.parse(localStorage.getItem("employees")) || [];
+    let selectedEmployee = employeeData.find(emp => emp.id === id);
     if(selectedEmployee){
         clearTableOne();
-        printIndividualDetail(selectedEmployee);
+        printIndividualDetails(selectedEmployee);
 
         setTimeout(function(){
             clearTableOne();
-
         }, 10000);
     }
 }
